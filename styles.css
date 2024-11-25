@@ -1,68 +1,144 @@
+/* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 #container {
     width: 80%;
     margin: auto;
-    background-color: #f9f9f9;
+    background-color: white;
+    padding: 20px;
 }
 
+/* Header */
 header {
-    text-align: center;
     background-color: #007acc;
     color: white;
-    padding: 10px 0;
+    padding: 20px 0;
+    text-align: center;
 }
 
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Navigation Bar */
 nav ul {
     list-style: none;
     padding: 0;
     background-color: #333;
-    overflow: hidden;
     margin: 0;
+    text-align: center;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
-    padding: 10px 15px;
+    padding: 15px 20px;
     display: inline-block;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
     background-color: #575757;
 }
 
+/* Product Details */
 #content {
-    padding: 20px;
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 30px;
 }
 
-.product {
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 30%;
-    background-color: #fff;
-    text-align: center;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-}
-
-.product img {
+#content img {
     max-width: 100%;
     height: auto;
+    border-radius: 8px;
 }
 
+.product-details {
+    width: 50%;
+}
+
+.product-details h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.product-details p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.product-details .price {
+    font-size: 24px;
+    color: #007acc;
+    font-weight: bold;
+}
+
+.product-details a {
+    text-decoration: none;
+    background-color: #007acc;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.product-details a:hover {
+    background-color: #005a8c;
+    transform: scale(1.05);
+}
+
+/* Footer */
 footer {
     text-align: center;
     background-color: #333;
     color: white;
-    padding: 10px 0;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-details {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #content img {
+        max-width: 80%;
+        margin-bottom: 20px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        padding: 12px 15px;
+    }
 }
